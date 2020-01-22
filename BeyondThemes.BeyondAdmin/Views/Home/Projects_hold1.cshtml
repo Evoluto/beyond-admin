@@ -1,0 +1,66 @@
+﻿@model IEnumerable<BeyondThemes.BeyondAdmin.Models.ProjectViewModel>
+@{
+    ViewBag.Title = "Projects";
+    Layout = "~/Views/Shared/_Default.cshtml";
+}
+
+<h2>Projects</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Tbl386_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tbl386_custom_sector)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tbl385_agency_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tbl386_custom_island)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tbl386_custom_pa_category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tbl386_custom_pw_number)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tbl386_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tbl386_custom_sector)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tbl385_agency_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tbl386_custom_island)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tbl386_custom_pa_category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tbl386_custom_pw_number)
+            </td>
+            <td>
+                <a href="#" class="btn btn-info btn-xs edit"><i class="fa fa-edit"></i> Edit</a>
+                <a href="#" class="btn btn-danger btn-xs delete"><i class="fa fa-trash-o"></i> Delete</a>
+                @*@Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+            </td>
+        </tr>
+    }
+
+</table>
